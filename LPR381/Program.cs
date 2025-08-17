@@ -57,7 +57,15 @@ namespace LPR381
 					}
 				}
 
+				Console.Write("Enter Choice: ");
 				int chosenAlgo = int.Parse(Console.ReadLine());
+
+				if(chosenAlgo < 1 || chosenAlgo > 5)
+				{
+					Console.WriteLine("Invalid choice, press any key to retry...");
+					Console.ReadKey();
+					continue;
+				}
 
 				switch ((Options)chosenAlgo)
 				{
