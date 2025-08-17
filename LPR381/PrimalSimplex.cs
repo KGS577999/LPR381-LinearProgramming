@@ -21,7 +21,7 @@ namespace LPR381
 
 		public void Solve()
 		{
-			Console.WriteLine("Help me");
+			Console.WriteLine("Primal Simplex");
 		}
 	}
 }
