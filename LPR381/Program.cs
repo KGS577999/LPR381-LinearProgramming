@@ -70,7 +70,7 @@ namespace LPR381
 				switch ((Options)chosenAlgo)
 				{
 					case Options.Primal_Simplex:
-						algo = new PrimalSimplex();
+						algo = new PrimalSimplex(objectiveFunction, constraint);
 						break;
 					case Options.Revised_Primal_Simplex:
 						break;
@@ -85,9 +85,6 @@ namespace LPR381
 				Console.ReadKey();
 
 			} while (looping);
-
-			
-
 		}
 	}
 }

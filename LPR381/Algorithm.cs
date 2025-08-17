@@ -8,6 +8,6 @@ namespace LPR381
 {
 	public interface Algorithm
 	{
-		void Run();
+		void Solve();
 	}
 }
