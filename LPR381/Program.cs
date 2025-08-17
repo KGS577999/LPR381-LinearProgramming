@@ -34,7 +34,9 @@ namespace LPR381
 
 				string objectiveFunction = lines[0].Trim();
 
-				string constraint = lines[1].Trim();
+				//string constraint = lines[1].Trim();
+
+				string[] constraintLines = lines.Skip(1).Take(lines.Length - 2).ToArray();
 
 				//Console.WriteLine("Objective Function: " + objectiveFunction);
 				//Console.WriteLine("Constraint: " + constraint);
@@ -70,7 +72,20 @@ namespace LPR381
 				switch ((Options)chosenAlgo)
 				{
 					case Options.Primal_Simplex:
-						algo = new PrimalSimplex(objectiveFunction, constraint);
+					
+						for (int i = 0; i < constraintLines.Length; i++)
+						{
+							if (constraintLines[i].Contains(">="))
+							{
+								Console.WriteLine("Cannot use Primal Simplex on a problem with a >= constraint");
+								break;
+							}
+							else
+							{
+								algo = new PrimalSimplex(objectiveFunction, constraintLines);
+								algo.Solve();
+							}
+						}
 						break;
 					case Options.Revised_Primal_Simplex:
 						break;
