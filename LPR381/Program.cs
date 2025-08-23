@@ -90,6 +90,9 @@ namespace LPR381
 					case Options.Revised_Primal_Simplex:
 						break;
 					case Options.Branch_and_Bound:
+						{
+                            new BranchBoundSimplex(objectiveFunction, constraintLines).Solve();
+                        }
 						break;
 					case Options.Knapsack_Branch_and_Bound:
 						break;
