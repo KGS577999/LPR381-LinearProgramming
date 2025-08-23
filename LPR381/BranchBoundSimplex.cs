@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace LPR381
 {
-    // Keep same base type as your PrimalSimplex so Program.cs can call it the same way.
+    // Kept the same base type as our PrimalSimplex so Program.cs can call it the same way.
     public class BranchBoundSimplex
     {
         private readonly string _objLine;
